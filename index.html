@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LienzoAPP - Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        .info-panel{
+            transition: background-color 0.25s ease-in-out;
+        }
+
+        .info-panel:hover{
+            background-color: #eaeaee;
+        }
+    </style>
+
+</head>
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <img src="img/logo.svg" style="width: 45px;">
+                </div>
+                <div class="sidebar-brand-text mx-3">LienzoAPP <sup>2.0</sup></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Formulario Encuesta</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="disable d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar ..."
+                                aria-label="Search" aria-describedby="basic-addon2" disabled readonly>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary disabled" type="button" disabled readonly>
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Invitado</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item disabled" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil de usuario
+                                </a>
+                                <a class="dropdown-item disabled" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Configuración
+                                </a>
+                                <a class="dropdown-item disabled" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Lienzos guardados
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item disabled" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Cerrar sesión
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Formulario Empresas Clientes</h1>
+                        <a href="#" class="disabled d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Descargar formulario</a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-xl-5 col-md-5 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-start">
+                                        <div class="col-auto mr-4">
+                                            <img src="img/talk-icon.svg" style="width: 80px;background-color: #f1f3f6;    border: 1px solid #ced3da;padding: 14px;border-radius: 14px;">
+                                        </div>
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Mensaje del Administrador</div>
+                                            <div class="h5 font-weight-bold text-gray-800">
+                                                Hola ! Gracias por participar en la encuesta de LienzoAPP, valoramos tu participación.
+                                                
+                                                <p class="h6 mt-3 font-weight-normal">Tus conocimientos son cruciales para ayudarnos a mejorar Lienzo APP. Al tomarte unos minutos para completar esta breve encuesta, contribuirás directamente al futuro de nuestra aplicación. <br><br>Tus opiniones honestas nos ayudarán a identificar áreas de mejora y mejorar la experiencia de usuario e interfaz grafica en general. <br><br> <span class="font-weight-bold">¡Gracias por tu tiempo y apoyo!</span></p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-7 col-md-7 mb-4">
+                            <div class="card shadow mb-4 h-100">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Nuestra Aplicación</h6>
+                                </div>
+                                <div class="card-body px-5" style="display: flex;flex-direction: column;gap: 15px;">
+                                    <div class="row align-items-center info-panel" style="border: 1px solid #dae2ee;border-radius: 10px;">
+                                        <div class="col-xl-3 col-md-3">
+                                            <div class="text-center">
+                                                <img class="img-fluid px-1 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="...">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-9 col-md-9">
+                                            <p class="h6 mt-2 text-dark font-weight-normal">LienzoApp es una poderosa herramienta diseñada para optimizar sus esfuerzos de marketing en redes sociales, <b>al automatizar la creación de posts-imágenes impresionantes</b>, permitimos a las empresas de turismo generar rápidamente imágenes llamativas para Facebook e Instagram sin demora y sincronizado con la parrilla de contenidos.</p>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center info-panel" style="border: 1px solid #dae2ee;border-radius: 10px;">
+                                        <div class="col-xl-3 col-md-3">
+                                            <div class="text-center">
+                                                <img class="img-fluid px-1 mt-3 mb-4" style="width: 6rem;" src="img/undraw_profile_1.svg" alt="...">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-9 col-md-9">
+                                            <p class="h6 mt-2 text-dark font-weight-normal">Con nuestra interfaz intuitiva, <b>puedes personalizar diseños para tus posts sin esfuerzo</b>, agregar texto cautivador e incorporar el estilo único de su marca. Dedica menos tiempo al diseño y más tiempo a atraer a la audiencia.</p>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center info-panel" style="border: 1px solid #dae2ee;border-radius: 10px;">
+                                        <div class="col-xl-3 col-md-3">
+                                            <div class="text-center">
+                                                <img class="img-fluid px-1 mt-3 mb-4" style="width: 6rem;" src="img/undraw_rocket.svg" alt="...">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-9 col-md-9">
+                                            <p class="h6 mt-2 text-dark font-weight-normal">Al integrarnos con la API de Facebook, <b>programamos automáticamente sus publicaciones visualmente atractivas para alinearlas con el calendario de contenido de su marca.</b> Esto garantiza una visibilidad y participación óptimas en su página de Facebook, ahorrándole tiempo y esfuerzo.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Encuesta a potenciales empresas clientes</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScB4xF4xhWqVMRUW2gUGjUAW7C5GgMxtuza0lRSo8KE8b2g4g/viewform?embedded=true" width="100%" height="3400" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; LienzoAPP 2024</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+</body>
+</html>
